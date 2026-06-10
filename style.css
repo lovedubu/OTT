@@ -95,3 +95,11 @@
     font-size: 35px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-item {
+    width: 100%;
+}
