@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>재생목록</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 상단 메타 -->
+  <div class="meta-section">
+  <div class="meta-left">
+    <div class="title-row">
+      <div class="current-ep-title" id="show-title"></div>
+      <div class="icon-row">
+        <div class="icon-btn" title="좋아요">
+          <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+        </div>
+        <div class="icon-btn" title="공유">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </div>
+        <div class="icon-btn" title="더보기">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </div>
+      </div>
+    </div>
+ </div>
+  </div>
+ 
+  <!-- 회차 섹션 -->
+  <div class="ep-section-header">
+    <div class="current-ep-desc">부재 : <span id="show-desc"></span></div>
+  </div>
+ 
+  <!-- 에피소드 목록 -->
+  <div class="ep-list" id="ep-list"></div>
+ 
+</div>
+ 
+<script src="playlist.js"></script>
+</body>
+</html>
+<!-- 
+  <div class="ep-list">
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=O54PjSD9BUg&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=1&t=4s', '_blank')">
+      <div class="ep-num">1</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/O54PjSD9BUg/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLDcN3H7yJtM1cIlPuHgx_kvDFDlxg" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name">메뉴 밑줄 슬라이딩 애니메이션 만들기 | 간단해 보이지만 막상 하려니 잘 모르겠는 그것</div>
+          <div class="ep-duration">18분 55초</div>
+        </div>
+        <div class="ep-synopsis">Css html태그 선택법 :first-child, position:absolute, offset, 스무스한 애니메이션 트랜지션 넣기 </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+
+
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://youtu.be/sZXr_4fmz5o?list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn', '_blank')">
+      <div class="ep-num">2</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/sZXr_4fmz5o/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLARLciprda5Cd1lwM1cRV9JshoJgQ" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name">초보자를 위한 완벽정리, 프론트엔드 개발자 입문 : CSS, 완벽한 포트폴리오를 위한 지름길 , 너의 웹사이트가 못생겼다면 극건 CSS 탓</div>
+          <div class="ep-duration">17분 51초</div>
+        </div>
+        <div class="ep-synopsis">Css 작성하는 방법 : color, img, boder, padding, margin </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=CpUmhGdUHEA&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=4', '_blank')">
+      <div class="ep-num">3</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/CpUmhGdUHEA/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLBzw8SIg0SNxMRYqB7HSY_Y7AgEuw" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name">코딩, 뭐부터 배울지 모르겠다면 여기부터 시작하면됨, 초보자를 위한 HTML강의, 바로 코딩 가능</div>
+          <div class="ep-duration">17분 04초</div>
+        </div>
+        <div class="ep-synopsis">HTML,CSS의 구조를 알아보자</div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=ru5FGYuycwY&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=6', '_blank')">
+      <div class="ep-num">4</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/ru5FGYuycwY/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLBghfAAwpyb5lJ2J05Z1sfOd4zcBg" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name">웹사이트에 애니메이션 효과를 어떻게 줄까? | css : keyframes 남들과 다른 웹사이트 만들기 첫번째</div>
+          <div class="ep-duration">24분 30초</div>
+        </div>
+        <div class="ep-synopsis">웹사이트 디자인 : 스타벅스 웹페이지 만들어보기</div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=zLtUPIPum00&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=7', '_blank')">
+      <div class="ep-num">5</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/zLtUPIPum00/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLAVdjYrtYRPrisgFxC79QcOFiSerQ" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name"> 넷플릭스 스타일의 웹사이트는 어떻게만들까? | CSS linear-gradient 사용법에 대해 알아보자.</div>
+          <div class="ep-duration">12분 45초</div>
+        </div>
+        <div class="ep-synopsis">웹사이트가 좀더 간지나보일수 있는 넷플릭스 느낌의 UI 만드는법중 하나인 gradient</div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=4fxgb3LkA7I&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=8', '_blank')">
+      <div class="ep-num">6</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/4fxgb3LkA7I/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLDlkb3dBLdRve5p8XhMQTsYBlg20A" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name">내 프로젝트가 촌스럽다고..? 폰트만 바꿔도 분위기가 확~사는 유니크한 폰트 적용법! | 구글폰트</div>
+          <div class="ep-duration">7분 38초</div>
+        </div>
+        <div class="ep-synopsis">내 웹사이트에 외부 폰트를 적용하는 법을 들고왔어요! 아주 간단한 팁이지만 아무도 안알려주면 절대 모를 폰트 적용하는법!</div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=3Az_hKsL9L8&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=9', '_blank')">
+      <div class="ep-num">7</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/3Az_hKsL9L8/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLApEu69o0sN87RUN-Vc2FjyyPUTFg" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name">반응형 웹페이지 제일 쉽게 만드는 법, 부트스트랩 사용법 완벽하게 익히자 (설명 쉬움) | 웹개발자라면 반드시 알아야하는 부트스트랩</div>
+          <div class="ep-duration">23분 08초</div>
+        </div>
+        <div class="ep-synopsis">반응형 웹사이트를 쉽게 만들 수 있고 우리를 css늪으로 부터 탈출 시켜줄 부트스트랩!</div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+
+    <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=Mqh13dNI8jc&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=10', '_blank')">
+      <div class="ep-num">8</div>
+      <div class="ep-thumb">
+         <img src="https://i.ytimg.com/vi/Mqh13dNI8jc/hqdefault.jpg?sqp=-oaymwErCPYBEIoBSFryq4qpAx0IARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuALzGA==&rs=AOn4CLDuhd8_MtLggS5jxaqYYrLkYt_MGA" alt="썸네일">
+         <div class="play-overlay">
+            <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-info-top">
+          <div class="ep-name">웹개발자면서 이것도 모름? | DOM과 CSSOM, 렌더링 과정</div>
+          <div class="ep-duration">34분 01초</div>
+        </div>
+        <div class="ep-synopsis">브라우저의 동작 원리에 대하여!</div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+      </div>
+    </div>
+
+<script>
+  function selectEp(el) {
+    document.querySelectorAll('.ep-item').forEach(e => e.classList.remove('active'));
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
+
+ -->

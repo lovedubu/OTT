@@ -1,0 +1,285 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #141414;
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* 상단 메타 영역 */
+.meta-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 40px;
+}
+
+.meta-left { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #bcbcbc;
+}
+
+.badge-age {
+  background: #e50914;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+
+.badge-hd {
+  border: 1px solid #bcbcbc;
+  color: #bcbcbc;
+  font-size: 11px;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.badge-ad {
+  font-size: 12px;
+  color: #bcbcbc;
+  border: 1px solid #bcbcbc;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.icon-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #bcbcbc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.icon-btn:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+.icon-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.meta-right {
+  font-size: 13px;
+  color: #bcbcbc;
+  line-height: 2;
+  max-width: 380px;
+  flex-shrink: 0;
+}
+
+.meta-right .label { color: #bcbcbc; }
+.meta-right .value { color: #fff; }
+.meta-right .link { color: #0080ff; cursor: pointer; }
+.meta-right .link:hover { text-decoration: underline; }
+.meta-right .bold { font-weight: 700; color: #fff; }
+
+/* 현재 에피소드 */
+.current-ep-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.current-ep-desc {
+  font-size: 14px;
+  color: #bcbcbc;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-top: 4px;
+}
+
+/* 회차 섹션 */
+.ep-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ep-section-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.season-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #2a2a2a;
+  transition: background 0.2s;
+}
+
+.season-select:hover { background: #333; }
+
+.season-select svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.sub-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #bcbcbc;
+}
+
+/* 에피소드 목록 */
+.ep-list { display: flex; flex-direction: column; }
+
+.ep-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 10px;
+  border-top: 1px solid #2a2a2a;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.ep-item:hover { background: #1f1f1f; }
+.ep-item.active { background: #2a2a2a; }
+
+.ep-num {
+  font-size: 22px;
+  color: #777;
+  min-width: 30px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.ep-thumb {
+  width: 130px;
+  height: 74px;
+  border-radius: 3px;
+  background: #2a2a2a;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.ep-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+
+.ep-item:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-overlay .play-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-overlay .play-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #141414;
+  margin-left: 3px;
+}
+
+.ep-info { flex: 1; min-width: 0; }
+
+.ep-info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 7px;
+  gap: 12px;
+}
+
+.ep-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ep-duration {
+  font-size: 13px;
+  color: #bcbcbc;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ep-synopsis {
+  font-size: 12px;
+  color: #bcbcbc;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 3px;
+  background: #444;
+  border-radius: 2px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #e50914;
+  border-radius: 2px;
+}
