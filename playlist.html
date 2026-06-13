@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>재생목록</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="playlist.css">
 </head>
 <body>
@@ -14,7 +19,7 @@
   <div class="meta-section">
   <div class="meta-left">
     <div class="title-row">
-      <div class="current-ep-title">HTML/CSS강의</div>
+      <div class="current-ep-title" id="show-title"></div>
       <div class="icon-row">
         <div class="icon-btn" title="좋아요">
           <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
@@ -29,7 +34,21 @@
     </div>
  </div>
   </div>
-
+ 
+  <!-- 회차 섹션 -->
+  <div class="ep-section-header">
+    <div class="current-ep-desc">부재 : <span id="show-desc"></span></div>
+  </div>
+ 
+  <!-- 에피소드 목록 -->
+  <div class="ep-list" id="ep-list"></div>
+ 
+</div>
+ 
+<script src="playlist.js"></script>
+</body>
+</html>
+<!-- 
   <div class="ep-list">
 
     <div class="ep-item" onclick="selectEp(this); window.open('https://www.youtube.com/watch?v=O54PjSD9BUg&list=PLKvVQ9ZQzjVkwahMynnQuY0E_ohMtzBxn&index=1&t=4s', '_blank')">
@@ -209,3 +228,5 @@
 </script>
 </body>
 </html>
+
+ -->

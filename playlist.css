@@ -24,31 +24,12 @@ body {
 
 .meta-left { display: flex; flex-direction: column; gap: 12px; width: 100%; }
 
-
-.ep-section-title {
-  font-size: 20px;
-  font-weight: 700;
-}
-
 .title-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   width: 100%;
-}
-
-.current-ep-title {
-  font-size: 19px;
-  font-weight: 700;
-  margin-bottom: 0;
-}
-
-.icon-row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-left: auto;
 }
 
 .badges {
@@ -108,6 +89,34 @@ body {
 
 .icon-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
+.meta-right {
+  font-size: 13px;
+  color: #bcbcbc;
+  line-height: 2;
+  max-width: 380px;
+  flex-shrink: 0;
+}
+
+.meta-right .label { color: #bcbcbc; }
+.meta-right .value { color: #fff; }
+.meta-right .link { color: #0080ff; cursor: pointer; }
+.meta-right .link:hover { text-decoration: underline; }
+.meta-right .bold { font-weight: 700; color: #fff; }
+
+/* 현재 에피소드 */
+.current-ep-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.current-ep-desc {
+  font-size: 14px;
+  color: #bcbcbc;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-top: 4px;
+}
 
 /* 회차 섹션 */
 .ep-section-header {
@@ -117,6 +126,10 @@ body {
   margin-bottom: 16px;
 }
 
+.ep-section-title {
+  font-size: 20px;
+  font-weight: 700;
+}
 
 .season-select {
   display: flex;
@@ -173,6 +186,7 @@ body {
 .ep-thumb {
   width: 130px;
   height: 74px;
+  border-radius: 3px;
   background: #2a2a2a;
   flex-shrink: 0;
   display: flex;
@@ -206,25 +220,21 @@ body {
   opacity: 1;
 }
 
-.ep-thumb .play-icon {
-  width: 36px;
-  height: 36px;
+.play-overlay .play-icon {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.ep-thumb .play-icon svg {
+.play-overlay .play-icon svg {
   width: 16px;
   height: 16px;
-  fill: #fff;
-  margin-left: 2px;
-}
-
-.ep-thumb.current .play-icon {
-  background: rgba(229,9,20,0.8);
+  fill: #141414;
+  margin-left: 3px;
 }
 
 .ep-info { flex: 1; min-width: 0; }
@@ -255,6 +265,7 @@ body {
   color: #bcbcbc;
   line-height: 1.55;
   display: -webkit-box;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
