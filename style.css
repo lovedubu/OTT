@@ -2,6 +2,34 @@
     background-color: black;
 }
 
+.nav-item.dropdown img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .dropdown-menu {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+    }
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
 
 .carousel-item img {
     height: 65vh;

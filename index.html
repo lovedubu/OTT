@@ -20,35 +20,60 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">홈</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">시리즈</a>
         </li>
-      
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            My Profile
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">프로필 관리</a></li>
-            <li><a class="dropdown-item" href="#">프로필 이전</a></li>
-            <li><a class="dropdown-item" href="#">계정</a></li>
-            <li><a class="dropdown-item" href="#">고객센터</a></li>
-
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">코플릭스에서 로그아웃</a></li>
-          </ul>
-        </li>
+    
       </ul>
-      <form class="d-flex" role="search">
-         <button class="btn btn-outline-success me-2 login-btn" type="submit">LOGIN</button>
-        <input class="form-control me-2" type="search" placeholder="What is your content?" aria-label="Search"/>
-        <button class="btn btn-outline-success search-btn" type="submit">Search</button>
-      </form>
+
+      <div class="d-flex flex-column flex-lg-row align-items-center ms-auto">
+
+  <div class="dropdown me-3 order-2 order-lg-1 mt-3 mt-lg-0">
+    <a class="nav-link dropdown-toggle p-0"
+       href="#"
+       role="button"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+
+      <img src="user-profile.jpg.jpg" class="profile-img">
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="#">프로필 관리</a></li>
+      <li><a class="dropdown-item" href="#">프로필 이전</a></li>
+      <li><a class="dropdown-item" href="#">계정</a></li>
+      <li><a class="dropdown-item" href="#">고객센터</a></li>
+
+      <li><hr class="dropdown-divider"></li>
+
+      <li><a class="dropdown-item" href="#">코플릭스에서 로그아웃</a></li>
+    </ul>
+  </div>
+
+  <form class="d-flex order-1 order-lg-2" role="search">
+    <button class="btn btn-outline-success me-2 login-btn" type="submit">
+      LOGIN
+    </button>
+
+    <input class="form-control me-2"
+           type="search"
+           placeholder="What is your content?">
+
+    <button class="btn btn-outline-success search-btn" type="submit">
+      Search
+    </button>
+  </form>
+
+</div>
+
+
+     
     </div>
+
   </div>
 </nav>
 
